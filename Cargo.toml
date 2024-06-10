@@ -1,0 +1,20 @@
+[package]
+name = "rddns"
+version = "0.1.0"
+edition = "2021"
+authors = ["Donjuan Platinum <donjuan@lecturify.net>"]
+license = "GPL-2.0-only"
+description = "DDNS Server and Client for Nsd"
+repository = "https://github.com/barrensea/rdns"
+readme = "README.md"
+
+
+[dependencies]
+actix-web = { version = "4.7.0", features = ["rustls-0_23"]}
+clap = { version = "4.5.6", features = ["derive"] }
+tokio = { version = "1.38.0" , features = ["full"]}
+rustls = "0.23"
+owo-colors = "4.0.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
