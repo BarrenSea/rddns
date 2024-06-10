@@ -1,8 +1,6 @@
 mod config;
-mod server;
 pub mod routers;
+mod server;
 
-
-
-pub use config::Config as Config;
-pub use server::Server as Server;
+pub use config::Config;
+pub use server::Server;

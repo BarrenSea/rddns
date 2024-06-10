@@ -1,8 +1,8 @@
 use clap::Parser;
 
-#[derive(Parser,Debug)]
-#[clap(version,about)]
-pub struct Config{
+#[derive(Parser, Debug)]
+#[clap(version, about)]
+pub struct Config {
     #[arg(short, long, default_value = "0.0.0.0:3000")]
     address: String,
     #[arg(short, long)]
@@ -11,12 +11,11 @@ pub struct Config{
     workers: usize,
 }
 
-impl Config{
+impl Config {
     pub fn address(&self) -> &str {
-	return &self.address;
+        return &self.address;
     }
     pub fn workers(&self) -> usize {
-	return self.workers;
+        return self.workers;
     }
 }
-
