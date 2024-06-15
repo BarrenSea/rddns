@@ -12,12 +12,21 @@ impl Server {
         return Server { config };
     }
     pub async fn run(&self) -> () {
-        HttpServer::new(|| App::new().service(routers::get_ip))
+        println!(
+            "Server Running On {} with {} workers use {} as nsd zone file",
+            format!("{}", self.config.address().yellow()),
+            format!("{}", self.config.workers().blue()),
+            format!("{}", self.config.path().purple())
+        );
+        HttpServer::new(|| App::new().service(routers::get_ip).service(routers::ddns))
             .bind(&self.config.address())
             .expect(&format!("{}", "Unable To Bind Server !".red()))
             .workers(self.config.workers())
             .run()
             .await
             .expect(&format!("{}", "Unable To Run the Server !".red()));
+    }
+    pub fn config(&self) -> &Config {
+        return &self.config;
     }
 }
