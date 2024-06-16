@@ -1,3 +1,5 @@
+//use crate::config;
+
 use super::nsd::*;
 use super::server::State;
 use actix_web::{
@@ -14,15 +16,24 @@ pub async fn get_ip(req: HttpRequest) -> impl Responder {
     return format!("{}\n", peer_addr.ip());
 }
 
-#[post("/ddns/{domain}/{address}")]
+#[post("/ddns/{domain}/{address}/{auth}")]
 pub async fn ddns(
     req: HttpRequest,
-    path: web::Path<(String, String)>,
+    path: web::Path<(String, String, String)>,
     data: Data<State>,
 ) -> impl Responder {
     let peer_addr = req
         .peer_addr()
         .expect("Unable To Get The Address Of Peer Address");
+    if path.2 != data.config().auth() {
+        println!(
+            "{} {} is try to access with wrong auth {}",
+            "Warn!!!".red(),
+            peer_addr.yellow(),
+            path.2
+        );
+        return format!("{}\n", "Acess Permission!".red());
+    }
     println!(
         "[DDNS Request] {} Request Domain {} for new address {}",
         format!("{}", peer_addr.purple()),
