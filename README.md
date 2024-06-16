@@ -1,10 +1,10 @@
 <div align="center">
 
-[![](https://img.shields.io/crates/d/rddns.svg)](https://crates.io/crates/algori)
-[![](https://img.shields.io/github/forks/barrensea/rddns.svg)](https://github.com/BarrenSea/algori/fork)
-[![](https://img.shields.io/github/repo-size/barrensea/rddns.svg)](https://github.com/BarrenSea/algori)
-[![](https://img.shields.io/github/stars/barrensea/rddns.svg)](https://github.com/BarrenSea/algori)
-[![](https://img.shields.io/github/commit-activity/t/barrensea/rddns.svg)](https://github.com/BarrenSea/algori)
+[![](https://img.shields.io/crates/d/rddns.svg)](https://crates.io/crates/rddns)
+[![](https://img.shields.io/github/forks/barrensea/rddns.svg)](https://github.com/BarrenSea/rddns/fork)
+[![](https://img.shields.io/github/repo-size/barrensea/rddns.svg)](https://github.com/BarrenSea/rddns)
+[![](https://img.shields.io/github/stars/barrensea/rddns.svg)](https://github.com/BarrenSea/rddns)
+[![](https://img.shields.io/github/commit-activity/t/barrensea/rddns.svg)](https://github.com/BarrenSea/rddns)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
 
 
