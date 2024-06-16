@@ -24,18 +24,17 @@ pub async fn ddns(
         .peer_addr()
         .expect("Unable To Get The Address Of Peer Address");
     println!(
-        "[DDNS Request] {} Request {} for {}\n",
+        "[DDNS Request] {} Request Domain {} for new address {}",
         format!("{}", peer_addr.purple()),
         format!("{}", path.0).blue(),
         format!("{}", path.1).green()
     );
-    read_from_nsd(data, &path.0, &path.1)
-        .await
-        .expect("nsd处理失败");
-    return format!(
-        "{} Request {} for {}\n",
-        format!("{}", peer_addr.ip()).yellow(),
-        format!("{}", path.0).blue(),
-        format!("{}", path.1).green()
-    );
+    match read_from_nsd(data, &path.0, &path.1).await {
+        Ok(_) => {
+            return format!("{}", "Success!\n".purple());
+        }
+        Err(_) => {
+            return format!("{}", "Error\n".red());
+        }
+    }
 }
