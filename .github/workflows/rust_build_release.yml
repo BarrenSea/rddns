@@ -31,18 +31,23 @@ jobs:
             os: macos-latest
           - target: x86_64-unknown-linux-gnu
             os: ubuntu-latest
+          - target: x86_64-unknown-linux-musl
+            os: ubuntu-latest            
           - target: x86_64-apple-darwin
             os: macos-latest
-          - target: riscv64gc-unknown-linux-gnu
-            os: ubuntu-latest
-          - target: riscv32gc-unknown-linux-gnu
-            os: ubuntu-latest
+          # - target: riscv64gc-unknown-linux-gnu
+          #   os: ubuntu-latest
+          # - target: riscv32gc-unknown-linux-gnu
+          #   os: ubuntu-latest
           - target: arm-unknown-linux-gnueabi
             os: ubuntu-latest
           - target: loongarch64-unknown-linux-gnu
             os: ubuntu-latest
           - target: armv7-unknown-linux-gnueabihf
             os: ubuntu-latest
+          - target: x86_64-pc-windows-msvc
+            os: windows-latest
+            
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
