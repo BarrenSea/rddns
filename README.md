@@ -23,12 +23,19 @@
 </p>
 
 # RDDNS
+A DDNS Server with NSD DNS Server
 ## Use
 ### Server
+You Can Build from `source`
 ``` shell
 	git clone https://github.com/barrensea/rddns && cd rddns
 	cargo build --release
 	./target/release/rddns --nds /etc/nsd/zone/example.zone
+```
+
+Or use `cargo install`
+``` shell
+	cargo instasll rddns
 ```
 
 ### Client
