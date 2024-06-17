@@ -1,6 +1,6 @@
 <div align="center">
 
-[![](https://img.shields.io/crates/d/algori.svg)](https://crates.io/crates/algori)
+[![](https://img.shields.io/crates/d/rddns.svg)](https://crates.io/crates/algori)
 [![](https://img.shields.io/github/forks/barrensea/rddns.svg)](https://github.com/BarrenSea/algori/fork)
 [![](https://img.shields.io/github/repo-size/barrensea/rddns.svg)](https://github.com/BarrenSea/algori)
 [![](https://img.shields.io/github/stars/barrensea/rddns.svg)](https://github.com/BarrenSea/algori)
